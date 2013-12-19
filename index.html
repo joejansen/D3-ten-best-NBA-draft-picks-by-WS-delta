@@ -86,13 +86,13 @@ d3.csv("data.csv", function(error, data) {
       .style("text-anchor", "end")
       .text("Population");
  
-  var state = svg.selectAll(".state")
+  var player = svg.selectAll(".player")
       .data(data)
     .enter().append("g")
       .attr("class", "g")
-      .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; });
+      .attr("transform", function(d) { return "translate(" + x0(d.Player) + ",0)"; });
  
-  state.selectAll("rect")
+  player.selectAll("rect")
       .data(function(d) { return d.ages; })
     .enter().append("rect")
       .attr("width", x1.rangeBand())
